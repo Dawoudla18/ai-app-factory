@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'welcome_page.dart';
+
 void main() => runApp(const HalaApp());
 
 class HalaApp extends StatelessWidget {
@@ -16,7 +18,15 @@ class HalaApp extends StatelessWidget {
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF006D77)),
       useMaterial3: true,
     ),
-    home: const ExpenseTrackerPage(),
+    home: Builder(
+      builder: (context) => WelcomePage(
+        onGetStarted: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const ExpenseTrackerPage()),
+          );
+        },
+      ),
+    ),
   );
 }
 
