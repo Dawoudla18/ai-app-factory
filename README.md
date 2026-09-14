@@ -1,17 +1,34 @@
-# hala2026
+# Hala2026
 
-A new Flutter project.
+Hala2026 is a simple, local-first expense tracker for people in Quebec. It records everyday spending in Canadian dollars (CAD); it does not provide tax, accounting, or financial advice.
 
-## Getting Started
+## Current features
 
-This project is a starting point for a Flutter application.
+- Add an expense with an amount, category, date, and optional note.
+- See the current month's total spending and category totals.
+- Review recent expenses and remove one with a left swipe.
+- Save entries only on the current device.
 
-A few resources to get you started if this is your first Flutter project:
+## Run locally
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+1. Install Flutter and Android Studio, then start an Android emulator or connect an Android phone with USB debugging enabled.
+2. On Windows, enable **Settings > System > For developers > Developer Mode**. Flutter plugins need this to create symbolic links.
+3. From the project folder, run:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```powershell
+   flutter pub get
+   flutter run
+   ```
+
+## Quality checks
+
+Run the following before committing changes:
+
+```powershell
+flutter analyze
+flutter test
+```
+
+## Important release work still required
+
+Before publishing to Google Play, choose a unique Android application ID, configure a protected release signing key, add a privacy policy and data/backup decisions, and establish automated CI checks.
